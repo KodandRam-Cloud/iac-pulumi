@@ -1,5 +1,6 @@
 encryptionsalt: v1:ODzY9Z9jl8Y=:v1:Ptwj0i4khwtLsFZK:nRPRGNalJropyXWesarjsukS+xzbPw==
 config:
+
   aws:profile: dev
 
   aws:region: us-east-1
@@ -30,3 +31,4 @@ config:
   proj-aws-setup:deleteOnTermination: "true"
   proj-aws-setup:disableApiTerm: "false"
   proj-aws-setup:ec2TagName: MyPrimaryEC2
+

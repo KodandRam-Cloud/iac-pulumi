@@ -1,5 +1,6 @@
 import * as aws from "@pulumi/aws";
 import * as pulumi from "@pulumi/pulumi";
+
 import * as ipModule from "ip";
 
 const projectConfig = new pulumi.Config("proj-aws-setup");
@@ -46,10 +47,12 @@ const ingressConfig = allowedPorts.map(port => ({
 
 const appSg = new aws.ec2.SecurityGroup(sgName, {
     vpcId: primaryVpc.id,
+
     description: sgDescription,
     tags: {
         Name: sgName,
     },
+
     ingress: ingressConfig,
 });
 
@@ -161,10 +164,12 @@ async function setupInfrastructure() {
             },
             tags: {
                 Name: ec2Config.ec2TagName,
+
             },
         });
 
     } catch (error) {
+
         console.error("An error occurred:", error);
     }
 }
@@ -196,9 +201,12 @@ function getSubnetRanges(cidr: string, subnetsCount: number, bits: number): stri
         }
 
         return subnetList;
+
     } catch (error) {
         return error as Error;
     }
 }
 
+
 setupInfrastructure();
+
