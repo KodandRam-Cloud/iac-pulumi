@@ -1,31 +1,34 @@
 encryptionsalt: v1:ODzY9Z9jl8Y=:v1:Ptwj0i4khwtLsFZK:nRPRGNalJropyXWesarjsukS+xzbPw==
 config:
-  aws:profile: deployment
-  aws:region: us-west-2
-  aws-deploy:vpcConfigName: config-vpc
-  aws-deploy:vpcRange: 10.1.0.0/16
-  aws-deploy:vpcTenancyType: default
-  aws-deploy:gatewayConfigName: config-gateway
-  aws-deploy:gatewayAttachConfigName: config-gw-attach
-  aws-deploy:publicRTConfigName: config-public-rt
-  aws-deploy:privateRTConfigName: config-private-rt
-  aws-deploy:azLimit: "3"
-  aws-deploy:subnetBits: "24"
-  aws-deploy:publicRouteConfigName: config-public-route
-  aws-deploy:publicDestinationRange: 0.0.0.0/0
-  aws-deploy:publicSubnetConfigPrefix: public-subnet
-  aws-deploy:privateSubnetConfigPrefix: private-subnet
-  aws-deploy:publicRTSubnetAssocConfigPrefix: public-rt-subnet-assoc
-  aws-deploy:privateRTSubnetAssocConfigPrefix: private-rt-subnet-assoc
-  aws-deploy:sgDesc: Application Security Group
-  aws-deploy:sgConfigName: app-security-group
-  aws-deploy:ingressPortsAllowed: "80,443"
-  aws-deploy:ingressCIDRsAllowed: "0.0.0.0/0"
-  aws-deploy:instanceConfigType: t2.micro
-  aws-deploy:imgConfigId: ami-0123456789abcdef0
-  aws-deploy:keyConfigName: deploy-key
-  aws-deploy:volumeConfigSize: "10"
-  aws-deploy:volumeConfigType: gp2
-  aws-deploy:terminateOnDeleteFlag: "true"
-  aws-deploy:ec2ConfigName: ec2-deployment-instance
-  aws-deploy:apiTerminationFlag: "false"
+
+  aws:profile: dev
+
+  aws:region: us-east-1
+  proj-aws-setup:subnet_bits: "24"
+  proj-aws-setup:gateway_attach_name: main-gw-attach
+  proj-aws-setup:gateway_name: main-gw
+  proj-aws-setup:max_zones: "3"
+  proj-aws-setup:priv_route_table_name: priv-rt-table
+  proj-aws-setup:priv_rt_subnets_assoc_prefix: priv-rt-table-assoc
+  proj-aws-setup:priv_subnets_prefix: priv-subnet-name
+  proj-aws-setup:main_dest_cidr: 0.0.0.0/0
+  proj-aws-setup:main_route_name: main-route-config
+  proj-aws-setup:pub_route_table_name: pub-rt-table
+  proj-aws-setup:pub_rt_subnets_assoc_prefix: pub-rt-table-assoc
+  proj-aws-setup:pub_subnets_prefix: pub-subnet-name
+  proj-aws-setup:primary_vpc_cidr: 10.1.0.0/16
+  proj-aws-setup:primary_vpc_instance_tenancy: default
+  proj-aws-setup:primary_vpc_name: primary-vpc-setup
+  proj-aws-setup:sgDescription: App SG
+  proj-aws-setup:sgName: applicationSg
+  proj-aws-setup:allowedPorts: "22,80,443,3000"
+  proj-aws-setup:allowedCIDRs: "0.0.0.0/0"
+  proj-aws-setup:instanceType: t2.small
+  proj-aws-setup:imageId: ami-037d04ec1f5d3e87d
+  proj-aws-setup:keyName: ec2_dev_key
+  proj-aws-setup:volumeSize: 30
+  proj-aws-setup:volumeType: gp2
+  proj-aws-setup:deleteOnTermination: "true"
+  proj-aws-setup:disableApiTerm: "false"
+  proj-aws-setup:ec2TagName: MyPrimaryEC2
+
