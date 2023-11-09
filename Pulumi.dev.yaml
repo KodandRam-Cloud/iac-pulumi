@@ -24,7 +24,7 @@ config:
   iac-aws:allowedIngressCIDRs: "0.0.0.0/0"
   iac-aws:allowedEgressCIDRs: "0.0.0.0/0"
   iac-aws:instanceType: t2.micro
-  iac-aws:imageId: ami-0213745ff0d7d7986
+  iac-aws:imageId: ami-0732afe0c000e5799
   iac-aws:keyName: ec2_dev_key
   iac-aws:volumeSize: 25
   iac-aws:volumeType: gp2
