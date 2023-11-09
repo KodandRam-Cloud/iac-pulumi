@@ -55,7 +55,7 @@ config:
   iac-aws:cloudWatchAgentPolicyAttachmentName: "cloudWatchAgentPolicyAttachment"
   iac-aws:instanceProfileName: "instanceProfile"
 
-change 
+change:
   aws:profile: dev
   iac-aws:domainName: "dev.cloudram6225.me"
   iac-aws:hostedZoneId: "Z018318615Q7YXOAXLQD"
