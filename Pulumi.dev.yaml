@@ -37,8 +37,6 @@ config:
   iac-aws:dbUser: csye6225
   iac-aws:dbSecurityGroupName: databaseSecurityGroup
   iac-aws:dbPassword: postgres
-  # We don't store password in plaintext in yaml.
-  # Use `pulumi config set --secret iac-aws:dbPassword YOUR_PASSWORD` in the CLI to set it.
   iac-aws:dbName: csye6225
   iac-aws:dbInstanceIdentifier: csye6225
   iac-aws:dbSubnetGroupName: private_subnet_for_rds
@@ -54,10 +52,11 @@ config:
   iac-aws:ec2RoleName: "ec2Role"
   iac-aws:cloudWatchAgentPolicyAttachmentName: "cloudWatchAgentPolicyAttachment"
   iac-aws:instanceProfileName: "instanceProfile"
-
-change:
-  aws:profile: dev
-  iac-aws:domainName: "dev.cloudram6225.me"
-  iac-aws:hostedZoneId: "Z018318615Q7YXOAXLQD"
-  iac-aws:imageId: ami-0732afe0c000e5799
-  iac-aws:keyName: ec2_dev_key
+  iac-aws:launchConfigurationName: asg_launch_config
+  iac-aws:autoScalingGroupName: webAppAutoScalingGroup
+  iac-aws:autoScalingCooldown: 60
+  iac-aws:autoScalingMinSize: 1
+  iac-aws:autoScalingMaxSize: 3
+  iac-aws:autoScalingDesiredCapacity: 1
+  iac-aws:loadBalancerSecurityGroupName: webAppLoadBalancerSecurityGroup
+  iac-aws:loadBalancerAllowedIngressPorts: "80,443"
