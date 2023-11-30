@@ -5,10 +5,6 @@ import * as gcp from "@pulumi/gcp";
 import * as path from "path";
  
 //Create an SNS topic
-
- 
-
- 
 const config = new pulumi.Config("iac-aws");
  
 const vpcName = config.require("vpc_name");
