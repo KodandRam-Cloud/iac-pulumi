@@ -1,6 +1,6 @@
 encryptionsalt: v1:ODzY9Z9jl8Y=:v1:Ptwj0i4khwtLsFZK:nRPRGNalJropyXWesarjsukS+xzbPw==
 config:
-  aws:profile: dev
+  aws:profile: demo
   aws:region: us-east-1
   iac-aws:bits_for_each_subnet: "24"
   iac-aws:internet_gateway_attachment_name: custom-gw-attachment
@@ -24,7 +24,7 @@ config:
   iac-aws:allowedIngressCIDRs: "0.0.0.0/0"
   iac-aws:allowedEgressCIDRs: "0.0.0.0/0"
   iac-aws:instanceType: t2.micro
-  iac-aws:imageId: ami-0732afe0c000e5799
+  iac-aws:imageId: ami-0e1fd8d28b53a586d
   iac-aws:keyName: ec2_dev_key
   iac-aws:volumeSize: 25
   iac-aws:volumeType: gp2
@@ -44,9 +44,9 @@ config:
   iac-aws:dbParameterGroupName: customdb-parameter-group
   iac-aws:allocatedStorage: 20
   iac-aws:applicationPort: "8080"
-  iac-aws:domainName: "dev.cloudram6225.me"
+  iac-aws:domainName: "demo.cloudram6225.me"
   iac-aws:route53ARecordName: route53ARecordName
-  iac-aws:hostedZoneId: "Z018318615Q7YXOAXLQD"
+  iac-aws:hostedZoneId: "Z10050852PQ924M9F6NOC"
   iac-aws:ttl: 60
   iac-aws:cloudWatchAgentServerPolicyName: "CloudWatchAgentServerPolicy"
   iac-aws:ec2RoleName: "ec2Role"
@@ -60,3 +60,16 @@ config:
   iac-aws:autoScalingDesiredCapacity: 1
   iac-aws:loadBalancerSecurityGroupName: webAppLoadBalancerSecurityGroup
   iac-aws:loadBalancerAllowedIngressPorts: "80,443"
+  iac-aws:MAILGUN_API_KEY: "befc9d2df486e59973e8fdb5709737b5-30b58138-b6d03274"
+  iac-aws:dynamoDBTableName: "webapp_Mail_Tracker"
+  iac-aws:emailDomainName: "cloudram6225.me"
+  iac-aws:gcpServiceAccountRolePermissions: "roles/storage.admin"
+  iac-aws:lambdaFilePath: "/Users/movvakodandram/Desktop/serverless"
+  iac-aws:lambdaIAMRoleCloudwatchPolicyARN: "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+  iac-aws:lambdaIAMRoleDynamoDBPolicyARN: "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+  iac-aws:snsTopicName: "webappTopic"
+  iac-aws:gcpBucketName: assignments
+  iac-aws:gcpProjectID: development-406620
+  iac-aws:gcpRegion: us-east1
+  gcp:project: development-406620
+  iac-aws:ec2IAMRoleSNSPolicyARN: "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
