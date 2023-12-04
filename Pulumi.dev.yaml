@@ -73,3 +73,4 @@ config:
   iac-aws:gcpRegion: us-east1
   gcp:project: development-406620
   iac-aws:ec2IAMRoleSNSPolicyARN: "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
+   iac-aws:sslCertificateARN: "arn:aws:acm:us-east-1:189917391871:certificate/2e96462d-4913-4ca8-b690-174d0cfe1aef"
